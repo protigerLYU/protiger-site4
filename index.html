@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XZCHT® | 天津市傲虎科技有限公司 - 工业科技解决方案</title>
+  <meta name="keywords" content="XZCHT, 傲虎科技, 机械设备, 电子科技, 同步带, 工业清洁剂, 传感器, 工业自动化, 新能源, 芯片制造" />
+  <meta name="description" content="XZCHT® 专注机械设备、电子科技与工业信息化，为新能源、芯片制造、自动化产线与设备维护场景提供高品质产品与定制化服务。" />
+  <style>
+    :root {
+      --bg: #050814;
+      --bg-2: #08111f;
+      --panel: rgba(14, 23, 41, 0.72);
+      --panel-strong: rgba(16, 28, 52, 0.92);
+      --line: rgba(120, 210, 255, 0.2);
+      --text: #eef7ff;
+      --muted: #9fb2c8;
+      --blue: #31c7ff;
+      --cyan: #74f2ff;
+      --purple: #8b5cff;
+      --gold: #e6c275;
+      --danger: #ff647c;
+      --shadow: 0 22px 70px rgba(0, 0, 0, 0.42);
+      --radius: 24px;
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(49, 199, 255, 0.18), transparent 30%),
+        radial-gradient(circle at 82% 8%, rgba(139, 92, 255, 0.18), transparent 32%),
+        radial-gradient(circle at 50% 80%, rgba(116, 242, 255, 0.08), transparent 38%),
+        var(--bg);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(120, 210, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 210, 255, 0.055) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.25), rgba(0,0,0,0.85));
+      z-index: -3;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent, rgba(49, 199, 255, 0.06), transparent 42%, rgba(139, 92, 255, 0.06), transparent 75%);
+      animation: scan 12s linear infinite;
+      z-index: -2;
+    }
+
+    @keyframes scan {
+      0% { transform: translateX(-35%); opacity: 0.45; }
+      50% { opacity: 0.9; }
+      100% { transform: translateX(35%); opacity: 0.45; }
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, textarea, select { font-family: inherit; }
+
+    .container { width: min(var(--max), calc(100% - 36px)); margin: 0 auto; }
+
+    .nav {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(var(--max), calc(100% - 24px));
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 14px 12px 18px;
+      border: 1px solid rgba(116, 242, 255, 0.16);
+      background: rgba(5, 10, 22, 0.72);
+      backdrop-filter: blur(18px);
+      border-radius: 999px;
+      box-shadow: 0 18px 55px rgba(0,0,0,0.34);
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; min-width: max-content; }
+    .brand-mark {
+      width: 42px; height: 42px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, var(--cyan), var(--blue) 42%, var(--purple));
+      box-shadow: 0 0 28px rgba(49,199,255,0.45);
+      font-weight: 900;
+      color: #03101c;
+      letter-spacing: -1px;
+    }
+    .brand strong { display:block; letter-spacing: 0.08em; font-size: 15px; }
+    .brand span { display:block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+    .nav-links { display: flex; gap: 2px; align-items: center; }
+    .nav-links a {
+      padding: 10px 13px;
+      color: #c9d8eb;
+      font-size: 14px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+    .nav-links a:hover { background: rgba(116,242,255,0.08); color: #fff; }
+
+    .nav-cta, .btn {
+      border: 0;
+      cursor: pointer;
+      color: #03101c;
+      background: linear-gradient(135deg, var(--cyan), var(--blue) 52%, #d1c3ff);
+      border-radius: 999px;
+      padding: 11px 17px;
+      font-weight: 800;
+      box-shadow: 0 0 28px rgba(49,199,255,0.28);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .nav-cta:hover, .btn:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(49,199,255,0.48); }
+    .btn.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(116,242,255,0.2);
+      box-shadow: none;
+    }
+
+    .menu-btn { display: none; background: transparent; border: 0; color: var(--text); font-size: 24px; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      padding: 128px 0 74px;
+      overflow: hidden;
+    }
+    #particleCanvas {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.72;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(116,242,255,0.22);
+      border-radius: 999px;
+      background: rgba(49,199,255,0.06);
+      color: #bdeeff;
+      font-size: 13px;
+      letter-spacing: .08em;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 18px var(--cyan);
+      animation: pulse 1.9s ease-in-out infinite;
+    }
+    @keyframes pulse { 50% { transform: scale(1.7); opacity: 0.45; } }
+
+    .hero h1 {
+      margin: 22px 0 18px;
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: 1.04;
+      letter-spacing: -0.06em;
+    }
+    .gradient-text {
+      background: linear-gradient(120deg, #fff, #aeefff 42%, #bda6ff 72%, #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      max-width: 720px;
+      color: #b9c8dc;
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.9;
+      margin: 0 0 28px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag {
+      padding: 8px 11px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.045);
+      border-radius: 999px;
+      color: #c9d8eb;
+      font-size: 13px;
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: 560px;
+      border: 1px solid rgba(116,242,255,0.18);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025)),
+        rgba(8, 16, 31, 0.72);
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: var(--shadow), inset 0 0 60px rgba(49,199,255,0.06);
+      backdrop-filter: blur(18px);
+    }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: conic-gradient(from 180deg, transparent, rgba(116,242,255,0.45), transparent, rgba(139,92,255,0.42), transparent);
+      opacity: 0.35;
+      animation: rotateGlow 9s linear infinite;
+    }
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      background: rgba(5, 9, 20, 0.76);
+      border-radius: 33px;
+    }
+    @keyframes rotateGlow { to { transform: rotate(360deg); } }
+
+    .panel-inner { position: relative; z-index: 2; padding: 22px; height: 100%; }
+    .dashboard-head { display:flex; justify-content: space-between; align-items:center; margin-bottom: 18px; }
+    .terminal-dots { display:flex; gap: 7px; }
+    .terminal-dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.35); }
+    .dashboard-head span { color: var(--muted); font-size: 13px; letter-spacing: .1em; }
+
+    .hero-gallery {
+      height: 280px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(116,242,255,0.14);
+      background: linear-gradient(135deg, rgba(49,199,255,0.14), rgba(139,92,255,0.12));
+      position: relative;
+    }
+    .hero-gallery img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.08);
+      transition: opacity 1.2s ease, transform 4s ease;
+      filter: saturate(1.05) contrast(1.05) brightness(.82);
+    }
+    .hero-gallery img.active { opacity: 1; transform: scale(1); }
+    .hero-gallery .fallback-visual {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg, rgba(49,199,255,0.14), rgba(139,92,255,0.12)),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 22px);
+      color: rgba(238,247,255,0.72);
+      text-align: center;
+      padding: 28px;
+    }
+    .fallback-visual strong { display:block; font-size: 22px; margin-bottom: 8px; }
+    .gallery-shade {
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to top, rgba(5,8,20,0.88), transparent 55%);
+      pointer-events:none;
+    }
+
+    .metrics { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 13px; margin-top: 14px; }
+    .metric-card {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(116,242,255,0.12);
+    }
+    .metric-card b { display:block; font-size: 28px; letter-spacing: -0.03em; color: #fff; }
+    .metric-card span { color: var(--muted); font-size: 13px; }
+
+    section { padding: 90px 0; position: relative; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+    .section-kicker { color: var(--cyan); letter-spacing: .16em; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .section-title { margin: 8px 0 0; font-size: clamp(28px, 4vw, 48px); letter-spacing: -0.04em; line-height: 1.15; }
+    .section-desc { color: var(--muted); max-width: 570px; line-height: 1.9; margin: 0; }
+
+    .capabilities { display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+    .glass-card {
+      position: relative;
+      border: 1px solid rgba(116,242,255,0.14);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
+      box-shadow: 0 18px 55px rgba(0,0,0,0.24);
+      overflow: hidden;
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+    }
+    .glass-card:hover { transform: translateY(-6px); border-color: rgba(116,242,255,0.42); box-shadow: 0 22px 70px rgba(49,199,255,0.12); }
+    .glass-card::before {
+      content:"";
+      position:absolute;
+      inset:-80px;
+      background: radial-gradient(circle at 25% 20%, rgba(49,199,255,0.18), transparent 32%), radial-gradient(circle at 80% 80%, rgba(139,92,255,0.16), transparent 36%);
+      pointer-events:none;
+    }
+    .capability { padding: 24px; min-height: 220px; }
+    .icon {
+      width: 48px; height: 48px; border-radius: 16px;
+      display:grid; place-items:center;
+      color: #04101c; font-weight: 900;
+      background: linear-gradient(135deg, var(--cyan), var(--blue), #c4b3ff);
+      box-shadow: 0 0 28px rgba(49,199,255,0.28);
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .glass-card h3, .glass-card p, .glass-card ul, .glass-card .mini-list { position: relative; z-index: 1; }
+    .glass-card h3 { margin: 0 0 12px; font-size: 20px; }
+    .glass-card p { margin: 0; color: #aebed2; line-height: 1.8; }
+
+    .product-shell {
+      display: grid;
+      grid-template-columns: 0.36fr 0.64fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+    .product-tabs {
+      padding: 12px;
+      border: 1px solid rgba(116,242,255,0.14);
+      border-radius: 28px;
+      background: rgba(255,255,255,0.045);
+      height: fit-content;
+      position: sticky;
+      top: 96px;
+    }
+    .tab-btn {
+      width: 100%;
+      border: 1px solid transparent;
+      color: var(--text);
+      background: transparent;
+      padding: 16px;
+      border-radius: 20px;
+      text-align: left;
+      cursor: pointer;
+      margin-bottom: 8px;
+      transition: .25s ease;
+    }
+    .tab-btn:last-child { margin-bottom: 0; }
+    .tab-btn b { display:block; font-size: 17px; margin-bottom: 5px; }
+    .tab-btn span { color: var(--muted); line-height: 1.6; font-size: 13px; }
+    .tab-btn.active, .tab-btn:hover {
+      border-color: rgba(116,242,255,0.22);
+      background: linear-gradient(135deg, rgba(49,199,255,0.14), rgba(139,92,255,0.10));
+      box-shadow: inset 0 0 28px rgba(49,199,255,0.05);
+    }
+
+    .product-view { min-width: 0; }
+    .product-panel {
+      display: none;
+      border: 1px solid rgba(116,242,255,0.14);
+      border-radius: 32px;
+      background: rgba(8,16,31,0.64);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .product-panel.active { display: block; animation: fadeUp .45s ease both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+    .product-copy { padding: 28px; }
+    .product-copy h3 { margin: 0 0 12px; font-size: clamp(25px, 3vw, 40px); letter-spacing: -0.04em; }
+    .product-copy p { color: #b5c6da; line-height: 1.9; margin: 0 0 20px; }
+    .mini-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 18px; }
+    .mini-box {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.08);
+      min-height: 92px;
+    }
+    .mini-box b { display:block; color: #fff; margin-bottom: 8px; }
+    .mini-box span { color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .pill-list { display:flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
+    .pill { color: #d7e9fb; border:1px solid rgba(116,242,255,0.16); background: rgba(116,242,255,0.06); border-radius:999px; padding:7px 10px; font-size: 13px; }
+
+    .loop-gallery {
+      border-top: 1px solid rgba(116,242,255,0.12);
+      padding: 18px 0 22px;
+      overflow: hidden;
+      position: relative;
+    }
+    .loop-gallery::before, .loop-gallery::after {
+      content:"";
+      position:absolute;
+      top:0; bottom:0;
+      width: 96px;
+      z-index: 3;
+      pointer-events:none;
+    }
+    .loop-gallery::before { left:0; background: linear-gradient(to right, rgba(8,16,31,0.95), transparent); }
+    .loop-gallery::after { right:0; background: linear-gradient(to left, rgba(8,16,31,0.95), transparent); }
+    .track {
+      display:flex;
+      gap: 14px;
+      width: max-content;
+      animation: scrollX var(--speed, 42s) linear infinite;
+      padding: 0 14px;
+    }
+    .loop-gallery:hover .track { animation-play-state: paused; }
+    @keyframes scrollX { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .image-card {
+      flex: 0 0 260px;
+      height: 178px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(116,242,255,0.14);
+      background: linear-gradient(135deg, rgba(49,199,255,0.12), rgba(139,92,255,0.12));
+      position: relative;
+      cursor: zoom-in;
+      box-shadow: 0 16px 38px rgba(0,0,0,0.26);
+    }
+    .image-card img { width:100%; height:100%; object-fit: cover; filter: brightness(.86) contrast(1.05); transition: .45s ease; }
+    .image-card:hover img { transform: scale(1.08); filter: brightness(1) contrast(1.08); }
+    .image-card .caption {
+      position:absolute;
+      left:0; right:0; bottom:0;
+      padding: 38px 14px 12px;
+      background: linear-gradient(to top, rgba(0,0,0,0.72), transparent);
+      color:#eaf7ff;
+      font-size: 13px;
+    }
+
+    .applications { display:grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 15px; }
+    .app-card { padding: 22px; min-height: 235px; }
+    .app-card small { color: var(--cyan); letter-spacing: .12em; font-weight: 800; }
+    .app-card h3 { margin-top: 14px; }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0,1fr));
+      gap: 12px;
+      counter-reset: step;
+    }
+    .step {
+      position: relative;
+      padding: 22px 16px;
+      border-radius: 22px;
+      border: 1px solid rgba(116,242,255,0.14);
+      background: rgba(255,255,255,0.045);
+      min-height: 170px;
+    }
+    .step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display:block;
+      color: var(--cyan);
+      font-size: 13px;
+      letter-spacing: .16em;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+    .step b { display:block; font-size: 18px; margin-bottom: 8px; }
+    .step span { color: var(--muted); line-height: 1.7; font-size: 13px; }
+
+    .about-grid { display:grid; grid-template-columns: .9fr 1.1fr; gap: 20px; align-items: stretch; }
+    .about-card { padding: 30px; }
+    .about-card p { color: #b8c9dc; line-height: 2; margin: 0 0 16px; }
+    .big-number { font-size: clamp(54px, 8vw, 96px); font-weight: 900; letter-spacing: -0.07em; color: transparent; -webkit-text-stroke: 1px rgba(116,242,255,0.45); }
+
+    .case-gallery {
+      margin-top: 24px;
+      border: 1px solid rgba(116,242,255,0.14);
+      border-radius: 32px;
+      overflow: hidden;
+      background: rgba(8,16,31,0.55);
+    }
+
+    .contact-grid { display:grid; grid-template-columns: .9fr 1.1fr; gap: 20px; align-items: stretch; }
+    .contact-info { padding: 30px; }
+    .contact-line {
+      display:flex; justify-content:space-between; gap:20px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: #d5e6f8;
+    }
+    .contact-line span:first-child { color: var(--muted); }
+    .form { padding: 28px; }
+    .form-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .field { display:flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+    .field label { color: var(--muted); font-size: 13px; }
+    .field input, .field textarea, .field select {
+      width:100%;
+      color: var(--text);
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(116,242,255,0.14);
+      border-radius: 16px;
+      padding: 13px 14px;
+      outline: none;
+    }
+    .field textarea { min-height: 118px; resize: vertical; }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: rgba(116,242,255,0.42); box-shadow: 0 0 0 4px rgba(49,199,255,0.08); }
+
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid rgba(116,242,255,0.12);
+      background: rgba(0,0,0,0.22);
+      color: var(--muted);
+    }
+    .footer-inner { display:flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; }
+    .footer-inner strong { color:#fff; }
+
+    .float-contact {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 45;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding: 12px 15px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(49,199,255,0.9), rgba(139,92,255,0.9));
+      color:#fff;
+      box-shadow: 0 18px 45px rgba(49,199,255,0.25);
+      font-weight: 800;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      z-index: 100;
+      background: rgba(0,0,0,0.82);
+      padding: 24px;
+    }
+    .lightbox.active { display:grid; }
+    .lightbox img {
+      max-width: min(1100px, 96vw);
+      max-height: 86vh;
+      border-radius: 22px;
+      border: 1px solid rgba(116,242,255,0.22);
+      box-shadow: 0 28px 90px rgba(0,0,0,0.65);
+    }
+    .lightbox button {
+      position:absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius:50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 24px;
+      cursor:pointer;
+    }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1040px) {
+      .hero-grid, .product-shell, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-panel { min-height: 500px; }
+      .capabilities { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .applications { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .process { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .product-tabs { position: static; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 62px;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        border-radius: 24px;
+        background: rgba(5,10,22,0.94);
+        border: 1px solid rgba(116,242,255,0.14);
+      }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding: 13px 16px; }
+      .menu-btn { display: block; }
+      .nav-cta { display:none; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(100% - 24px, var(--max)); }
+      .nav { top: 10px; width: calc(100% - 16px); border-radius: 24px; }
+      .brand span { display:none; }
+      .hero { padding-top: 110px; }
+      .hero-panel { min-height: 430px; border-radius: 26px; }
+      .hero-gallery { height: 210px; }
+      .metrics, .mini-grid, .form-grid { grid-template-columns: 1fr; }
+      .capabilities, .applications, .process { grid-template-columns: 1fr; }
+      .section-head { display:block; }
+      .section-desc { margin-top: 12px; }
+      .image-card { flex-basis: 220px; height: 150px; }
+      section { padding: 66px 0; }
+      .float-contact { left: 14px; right: 14px; justify-content:center; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#home" aria-label="回到首页">
+      <div class="brand-mark">XZ</div>
+      <div>
+        <strong>XZCHT®</strong>
+        <span>天津市傲虎科技有限公司</span>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">首页</a>
+      <a href="#products">产品中心</a>
+      <a href="#applications">应用行业</a>
+      <a href="#service">技术服务</a>
+      <a href="#about">关于我们</a>
+      <a href="#contact">联系我们</a>
+    </div>
+    <a class="nav-cta" href="#contact">立即咨询</a>
+    <button class="menu-btn" id="menuBtn" aria-label="打开菜单">☰</button>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <canvas id="particleCanvas"></canvas>
+      <div class="container hero-grid">
+        <div class="reveal visible">
+          <div class="eyebrow"><i class="pulse-dot"></i> INDUSTRIAL TECHNOLOGY SOLUTIONS</div>
+          <h1><span class="gradient-text">XZCHT®</span><br>工业科技解决方案</h1>
+          <p>专注机械设备、电子科技与工业信息化，为新能源、芯片制造、自动化产线与设备维护场景提供高品质产品与定制化服务。</p>
+          <div class="hero-actions">
+            <a class="btn" href="#products">查看产品矩阵</a>
+            <a class="btn secondary" href="#contact">联系技术顾问</a>
+          </div>
+          <div class="tags">
+            <span class="tag">新能源制造</span>
+            <span class="tag">工业自动化</span>
+            <span class="tag">芯片洁净工艺</span>
+            <span class="tag">机械设备配套</span>
+            <span class="tag">进口替代方案</span>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal visible">
+          <div class="panel-inner">
+            <div class="dashboard-head">
+              <div class="terminal-dots"><i></i><i></i><i></i></div>
+              <span>LIVE PRODUCT MATRIX</span>
+            </div>
+            <div class="hero-gallery" id="heroGallery">
+              <div class="fallback-visual">
+                <div>
+                  <strong>图片目录：images/hero/</strong>
+                  <span>放入 01.jpg、02.jpg、03.jpg ... 即可自动轮播</span>
+                </div>
+              </div>
+              <div class="gallery-shade"></div>
+            </div>
+            <div class="metrics">
+              <div class="metric-card"><b data-count="3">0</b><span>核心产品类别</span></div>
+              <div class="metric-card"><b data-count="5">0</b><span>重点应用行业</span></div>
+              <div class="metric-card"><b>OEM</b><span>规格与功能定制</span></div>
+              <div class="metric-card"><b>24h</b><span>需求快速响应</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capability">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">CORE CAPABILITY</div>
+            <h2 class="section-title">从工业耗材到智能监测，构建稳定可靠的产线支持体系</h2>
+          </div>
+          <p class="section-desc">围绕设备运行、产线维护、洁净生产和工况监测，提供产品供应、选型替换、非标定制与现场技术支持。</p>
+        </div>
+        <div class="capabilities">
+          <div class="glass-card capability reveal"><div class="icon">01</div><h3>工业耗材供应</h3><p>提供同步带、传动件、清洁剂、传感器等工业产品，适配多类产线设备。</p></div>
+          <div class="glass-card capability reveal"><div class="icon">02</div><h3>非标定制服务</h3><p>支持尺寸、材质、接口、通讯协议、功能参数等定制，匹配实际工况。</p></div>
+          <div class="glass-card capability reveal"><div class="icon">03</div><h3>进口替代方案</h3><p>针对进口品牌交期长、成本高等问题，提供高性价比替换方案。</p></div>
+          <div class="glass-card capability reveal"><div class="icon">04</div><h3>现场技术支持</h3><p>面向设备维护、产线改造、备件替换、传感监测等场景提供支持。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">PRODUCT CENTER</div>
+            <h2 class="section-title">产品矩阵</h2>
+          </div>
+          <p class="section-desc">每个产品类别对应独立图片文件夹。你只要把图片按 01、02、03 的命名规则放进去，页面会自动横向循环展示。</p>
+        </div>
+
+        <div class="product-shell reveal">
+          <div class="product-tabs" role="tablist">
+            <button class="tab-btn active" data-tab="belts"><b>同步带类产品</b><span>传动带、输送带、同步齿形带、特殊功能带。</span></button>
+            <button class="tab-btn" data-tab="cleaners"><b>工业清洁剂类产品</b><span>除垢、除锈、除油、防静电、杀菌消毒。</span></button>
+            <button class="tab-btn" data-tab="sensors"><b>传感器类产品</b><span>气体、压力、温湿度、粉尘、流量、振动监测。</span></button>
+          </div>
+
+          <div class="product-view">
+            <article class="product-panel active" id="panel-belts">
+              <div class="product-copy">
+                <h3>同步带与输送系统解决方案</h3>
+                <p>同步带类产品广泛应用于新能源电池装配产线、工业自动化设备、芯片制造搬运系统。涵盖传动带、输送带及定制型功能带，可满足高精度、高耐久性、耐化学腐蚀等复杂工况需求。</p>
+                <div class="mini-grid">
+                  <div class="mini-box"><b>常见类型</b><span>PDT 平皮带、SJT 三角带、TB 同步齿形带、RB 圆带、DB 多楔带、SB 特殊功能带。</span></div>
+                  <div class="mini-box"><b>材质能力</b><span>橡胶基带、聚氨酯基带、钢丝或芳纶增强纤维带。</span></div>
+                  <div class="mini-box"><b>应用场景</b><span>电芯输送、自动化输送线、芯片洁净搬运、食品医药输送。</span></div>
+                </div>
+                <div class="pill-list"><span class="pill">高强度抗拉</span><span class="pill">高耐磨</span><span class="pill">耐油耐酸碱</span><span class="pill">防静电</span><span class="pill">进口替代</span><span class="pill">规格定制</span></div>
+              </div>
+              <div class="loop-gallery" data-gallery="belts"><div class="track"></div></div>
+            </article>
+
+            <article class="product-panel" id="panel-cleaners">
+              <div class="product-copy">
+                <h3>工业清洁剂与设备维护方案</h3>
+                <p>工业清洁剂类产品广泛应用于新能源电池制造、工业设备维护、芯片超洁净工艺。涵盖除垢、除锈、除尘、去油、杀菌消毒、防静电清洁等多种类型。</p>
+                <div class="mini-grid">
+                  <div class="mini-box"><b>常见类型</b><span>CQ 除垢剂、CX 除锈剂、CY 除油剂、CC 除尘清洁剂、CF 防静电清洁剂、CS 杀菌消毒清洁剂。</span></div>
+                  <div class="mini-box"><b>适用材质</b><span>钢、不锈钢、铝、铜合金、塑料、陶瓷、玻璃、PCB 与制程设备表面。</span></div>
+                  <div class="mini-box"><b>应用场景</b><span>液冷系统除垢、设备除锈、机床去油、无尘室清洁、超纯水系统消毒。</span></div>
+                </div>
+                <div class="pill-list"><span class="pill">低 VOC</span><span class="pill">低残留</span><span class="pill">安全环保</span><span class="pill">防静电</span><span class="pill">洁净室适配</span><span class="pill">速效清洁</span></div>
+              </div>
+              <div class="loop-gallery" data-gallery="cleaners"><div class="track"></div></div>
+            </article>
+
+            <article class="product-panel" id="panel-sensors">
+              <div class="product-copy">
+                <h3>工业传感器与智能监测方案</h3>
+                <p>传感器类产品广泛用于新能源电池监测、工业制造自动化、芯片洁净工艺控制。产品涵盖气体、压力、温度、湿度、粉尘、流量、振动等多种类型，支持多协议接入与报警联动。</p>
+                <div class="mini-grid">
+                  <div class="mini-box"><b>常见类型</b><span>CQY 氧气、CYQ 气体、CYL 压力、CWD 温湿度、CFD 粉尘、CLL 流量、CDX 振动传感器。</span></div>
+                  <div class="mini-box"><b>功能拓展</b><span>有线、无线、带记录、声光报警、RS485、Modbus、Ethernet、LoRa。</span></div>
+                  <div class="mini-box"><b>应用场景</b><span>电池仓氧气监测、液冷压力监控、洁净室粉尘监控、温湿度与露点控制。</span></div>
+                </div>
+                <div class="pill-list"><span class="pill">高精度</span><span class="pill">高可靠性</span><span class="pill">抗干扰</span><span class="pill">远程监测</span><span class="pill">报警联动</span><span class="pill">PLC/DCS 集成</span></div>
+              </div>
+              <div class="loop-gallery" data-gallery="sensors"><div class="track"></div></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="applications">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">APPLICATIONS</div>
+            <h2 class="section-title">面向高要求工业场景</h2>
+          </div>
+          <p class="section-desc">围绕高洁净、高稳定、高精度、高可靠生产环境，提供从产品选型到替换交付的实际落地支持。</p>
+        </div>
+        <div class="applications">
+          <div class="glass-card app-card reveal"><small>BATTERY</small><h3>新能源电池制造</h3><p>电芯输送、液冷系统、装配线清洁、气体安全监测。</p></div>
+          <div class="glass-card app-card reveal"><small>SEMICONDUCTOR</small><h3>芯片制造与洁净室</h3><p>防静电清洁、粉尘监控、温湿度控制、洁净搬运。</p></div>
+          <div class="glass-card app-card reveal"><small>AUTOMATION</small><h3>工业自动化设备</h3><p>传动系统、输送机构、状态监测、备件替换。</p></div>
+          <div class="glass-card app-card reveal"><small>MAINTENANCE</small><h3>设备维护与改造</h3><p>除垢、除锈、去油、传感监测、预测性维护。</p></div>
+          <div class="glass-card app-card reveal"><small>CLEAN PRODUCTION</small><h3>食品医药生产</h3><p>食品级输送、杀菌消毒、洁净环境控制。</p></div>
+        </div>
+
+        <div class="case-gallery reveal">
+          <div class="loop-gallery" data-gallery="cases" style="border-top:0;"><div class="track"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">SERVICE PROCESS</div>
+            <h2 class="section-title">从选型到交付的完整服务流程</h2>
+          </div>
+          <p class="section-desc">重点解决型号确认、替代验证、非标定制、现场适配和后续维护中的实际问题。</p>
+        </div>
+        <div class="process reveal">
+          <div class="step"><b>需求沟通</b><span>确认设备、工况、行业要求与使用目的。</span></div>
+          <div class="step"><b>工况确认</b><span>核对温度、负载、腐蚀、洁净、防静电等条件。</span></div>
+          <div class="step"><b>产品选型</b><span>匹配规格、材质、接口、功能与交付方式。</span></div>
+          <div class="step"><b>样品测试</b><span>对关键产品进行试用、验证与替换评估。</span></div>
+          <div class="step"><b>批量交付</b><span>按项目节奏供货，支持持续备件供应。</span></div>
+          <div class="step"><b>售后支持</b><span>提供使用反馈、维护建议与后续优化。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="glass-card about-card reveal">
+            <div class="section-kicker">ABOUT XZCHT®</div>
+            <h2 class="section-title">专业、创新、可靠的工业科技品牌</h2>
+            <p>XZCHT® 专注于机械设备、电子科技与信息化解决方案。品牌以专业、创新和卓越为核心价值，致力于为客户提供高品质的产品与服务。</p>
+            <p>XZCHT® 将科技与智慧深度融合，推动机械与电子产业的智能化升级。未来将持续拓展产品与服务能力，赋能客户，与合作伙伴共同打造更加高效、智能与可持续发展的工业体系。</p>
+          </div>
+          <div class="glass-card about-card reveal">
+            <div class="big-number">XZCHT®</div>
+            <div class="mini-grid" style="grid-template-columns: repeat(2, minmax(0,1fr));">
+              <div class="mini-box"><b>机械设备</b><span>面向产线、设备维护、改造与备件配套。</span></div>
+              <div class="mini-box"><b>电子科技</b><span>传感监测、通讯接入、信息化数据支持。</span></div>
+              <div class="mini-box"><b>工业耗材</b><span>同步带、清洁剂、传感器及定制化产品。</span></div>
+              <div class="mini-box"><b>解决方案</b><span>从产品替换到场景落地的一体化服务。</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">CONTACT</div>
+            <h2 class="section-title">获取工业产品与定制方案支持</h2>
+          </div>
+          <p class="section-desc">如需同步带选型、清洁剂适配、传感器替换或非标定制，可直接联系并提供设备型号、使用工况与现场图片。</p>
+        </div>
+        <div class="contact-grid">
+          <div class="glass-card contact-info reveal">
+            <div class="contact-line"><span>公司名称</span><b>天津市傲虎科技有限公司</b></div>
+            <div class="contact-line"><span>品牌</span><b>XZCHT®</b></div>
+            <div class="contact-line"><span>联系电话</span><b>18251832484</b></div>
+            <div class="contact-line"><span>网站</span><b>protiger.net</b></div>
+            <div class="pill-list" style="margin-top:22px;"><span class="pill">快速响应</span><span class="pill">支持定制</span><span class="pill">工业场景</span><span class="pill">进口替代</span></div>
+          </div>
+          <form class="glass-card form reveal" onsubmit="return false;">
+            <div class="form-grid">
+              <div class="field"><label>姓名</label><input type="text" placeholder="请输入姓名"></div>
+              <div class="field"><label>公司</label><input type="text" placeholder="请输入公司名称"></div>
+            </div>
+            <div class="form-grid">
+              <div class="field"><label>联系电话</label><input type="tel" placeholder="请输入联系电话"></div>
+              <div class="field"><label>需求类型</label><select><option>同步带类产品</option><option>工业清洁剂类产品</option><option>传感器类产品</option><option>非标定制 / 进口替代</option></select></div>
+            </div>
+            <div class="field"><label>需求描述</label><textarea placeholder="请描述设备型号、使用场景、规格参数或替代需求"></textarea></div>
+            <button class="btn" type="submit" onclick="alert('静态单页演示：如需真实提交，请后续接入表单服务或后端接口。')">提交需求</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>XZCHT®</strong> ｜ 天津市傲虎科技有限公司</div>
+      <div>机械设备 ｜ 电子科技 ｜ 工业耗材 ｜ 信息化解决方案</div>
+      <div>© <span id="year"></span> 天津市傲虎科技有限公司. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <a class="float-contact" href="tel:18251832484">电话咨询：18251832484</a>
+
+  <div class="lightbox" id="lightbox">
+    <button id="closeLightbox" aria-label="关闭">×</button>
+    <img id="lightboxImg" alt="产品大图" />
+  </div>
+
+  <script>
+    /*
+      图片放置规则：
+      1. 首屏轮播：images/hero/01.jpg ~ 08.jpg
+      2. 同步带：images/products/belts/01.jpg ~ 20.jpg
+      3. 工业清洁剂：images/products/cleaners/01.jpg ~ 20.jpg
+      4. 传感器：images/products/sensors/01.jpg ~ 20.jpg
+      5. 应用案例：images/applications/01.jpg ~ 12.jpg
+
+      支持 jpg / png / webp / jpeg。
+      文件名必须使用两位数字：01、02、03 ... 20。
+      纯 HTML/JS 不能读取文件夹目录，所以这里通过固定命名规则自动尝试加载。
+    */
+
+    const IMAGE_CONFIG = {
+      hero:     { folder: 'images/hero', max: 8,  label: 'XZCHT® 工业科技' },
+      belts:    { folder: 'images/products/belts', max: 20, label: '同步带类产品' },
+      cleaners: { folder: 'images/products/cleaners', max: 20, label: '工业清洁剂类产品' },
+      sensors:  { folder: 'images/products/sensors', max: 20, label: '传感器类产品' },
+      cases:    { folder: 'images/applications', max: 12, label: '应用行业场景' }
+    };
+
+    const EXTENSIONS = ['jpg', 'png', 'webp', 'jpeg'];
+
+    function pad2(n) { return String(n).padStart(2, '0'); }
+
+    function smartImage(folder, index, alt, onReady) {
+      const img = new Image();
+      img.alt = alt;
+      img.loading = 'lazy';
+      let extIndex = 0;
+      const base = `${folder}/${pad2(index)}`;
+      img.onerror = () => {
+        extIndex += 1;
+        if (extIndex < EXTENSIONS.length) {
+          img.src = `${base}.${EXTENSIONS[extIndex]}`;
+        } else {
+          img.remove();
+        }
+      };
+      img.onload = () => { if (onReady) onReady(img); };
+      img.src = `${base}.${EXTENSIONS[extIndex]}`;
+      return img;
+    }
+
+    function buildLoopGallery(key) {
+      const cfg = IMAGE_CONFIG[key];
+      const gallery = document.querySelector(`[data-gallery="${key}"]`);
+      if (!gallery) return;
+      const track = gallery.querySelector('.track');
+      const cards = [];
+
+      for (let i = 1; i <= cfg.max; i++) {
+        const card = document.createElement('div');
+        card.className = 'image-card';
+        const caption = document.createElement('div');
+        caption.className = 'caption';
+        caption.textContent = `${cfg.label} · ${pad2(i)}`;
+        const img = smartImage(cfg.folder, i, `${cfg.label} ${pad2(i)}`, () => {
+          card.appendChild(caption);
+          card.addEventListener('click', () => openLightbox(img.currentSrc || img.src));
+          cards.push(card);
+        });
+        card.appendChild(img);
+        track.appendChild(card);
+      }
+
+      setTimeout(() => {
+        const validCards = Array.from(track.querySelectorAll('.image-card')).filter(card => card.querySelector('img') && card.querySelector('img').complete && card.querySelector('img').naturalWidth > 0);
+        if (validCards.length === 0) {
+          const empty = document.createElement('div');
+          empty.style.padding = '22px 28px';
+          empty.style.color = '#9fb2c8';
+          empty.textContent = `请放入图片：${cfg.folder}/01.jpg、02.jpg、03.jpg ...`;
+          track.appendChild(empty);
+          track.style.animation = 'none';
+          return;
+        }
+        validCards.forEach(card => track.appendChild(card.cloneNode(true)));
+        Array.from(track.querySelectorAll('.image-card')).forEach(card => {
+          const img = card.querySelector('img');
+          card.addEventListener('click', () => openLightbox(img.currentSrc || img.src));
+        });
+        const speed = Math.max(28, validCards.length * 6);
+        gallery.style.setProperty('--speed', `${speed}s`);
+      }, 1200);
+    }
+
+    function buildHeroGallery() {
+      const cfg = IMAGE_CONFIG.hero;
+      const box = document.getElementById('heroGallery');
+      let loaded = 0;
+      const fallback = box.querySelector('.fallback-visual');
+
+      for (let i = 1; i <= cfg.max; i++) {
+        const img = smartImage(cfg.folder, i, `${cfg.label} ${pad2(i)}`, () => {
+          loaded += 1;
+          if (fallback) fallback.style.display = 'none';
+          if (loaded === 1) img.classList.add('active');
+        });
+        box.insertBefore(img, box.querySelector('.gallery-shade'));
+      }
+
+      setInterval(() => {
+        const imgs = Array.from(box.querySelectorAll('img')).filter(img => img.complete && img.naturalWidth > 0);
+        if (imgs.length <= 1) return;
+        const current = imgs.findIndex(img => img.classList.contains('active'));
+        imgs.forEach(img => img.classList.remove('active'));
+        imgs[(current + 1) % imgs.length].classList.add('active');
+      }, 4200);
+    }
+
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.getElementById('lightboxImg').src = '';
+    }
+
+    document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox').addEventListener('click', (e) => { if (e.target.id === 'lightbox') closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.product-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(`panel-${btn.dataset.tab}`).classList.add('active');
+      });
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function animateCounters() {
+      document.querySelectorAll('[data-count]').forEach(el => {
+        const target = Number(el.dataset.count);
+        let current = 0;
+        const step = () => {
+          current += Math.max(1, Math.ceil(target / 38));
+          if (current >= target) {
+            el.textContent = `${target}+`;
+            return;
+          }
+          el.textContent = current;
+          requestAnimationFrame(step);
+        };
+        step();
+      });
+    }
+
+    function initParticles() {
+      const canvas = document.getElementById('particleCanvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let w, h;
+
+      function resize() {
+        w = canvas.width = window.innerWidth * devicePixelRatio;
+        h = canvas.height = window.innerHeight * devicePixelRatio;
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+        const count = Math.min(110, Math.floor(window.innerWidth / 12));
+        particles = Array.from({ length: count }, () => ({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.42 * devicePixelRatio,
+          vy: (Math.random() - 0.5) * 0.42 * devicePixelRatio,
+          r: (Math.random() * 1.8 + 0.8) * devicePixelRatio
+        }));
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+        for (const p of particles) {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(116,242,255,0.62)';
+          ctx.fill();
+        }
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const a = particles[i], b = particles[j];
+            const dx = a.x - b.x, dy = a.y - b.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            const maxDist = 145 * devicePixelRatio;
+            if (dist < maxDist) {
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.strokeStyle = `rgba(49,199,255,${(1 - dist / maxDist) * 0.18})`;
+              ctx.lineWidth = 1 * devicePixelRatio;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      resize(); draw();
+      window.addEventListener('resize', resize);
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    buildHeroGallery();
+    buildLoopGallery('belts');
+    buildLoopGallery('cleaners');
+    buildLoopGallery('sensors');
+    buildLoopGallery('cases');
+    animateCounters();
+    initParticles();
+  </script>
+</body>
+</html>
